@@ -1,0 +1,626 @@
+DEVOPS LAB – INTERNAL EXAM NOTES
+Experiment 1: Git Repository Operations
+Aim
+To create a local Git repository, add HTML files, commit changes and push them to GitHub.
+Requirements
+Git
+GitHub account
+Terminal / Git Bash
+Empty GitHub repository named DevOpsLab
+Procedure
+Step 1: Configure Git username and email.
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+git config: Git settings configure cheyadaniki.
+--global: Ee settings anni repositories ki apply avuthayi.
+user.name: Commit chesina person peru.
+user.email: Commit chesina person's email.
+Step 2: Create a project folder.
+mkdir DevOpsLab
+cd DevOpsLab
+mkdir: New folder create chesthundi.
+cd: Folder loki enter avuthundi.
+Step 3: Initialize Git repository.
+git init
+Meaning: Current folder ni Git repository ga convert chesthundi. .git ane hidden folder create avuthundi.
+Step 4: Create HTML files.
+echo "<html><body><h1>Welcome to DevOps</h1></body></html>" > Index.html
+
+echo "<html><body><h1>About Us</h1></body></html>" > About.html
+Meaning:
+echo: Text print cheyadaniki.
+>: File create chesi content write chesthundi.
+Index.html, About.html: HTML files.
+Step 5: Check files.
+ls
+Meaning: Current folder lo unna files list chupisthundi.
+Step 6: Add files to staging area.
+git add Index.html About.html
+Meaning: Files ni staging area ki add chesthundi. Commit cheyadaniki ready avuthayi.
+Step 7: Commit the files.
+git commit -m "Initial commit with HTML files"
+Meaning:
+git commit: Changes ni Git history lo save chesthundi.
+-m: Commit message provide chesthundi.
+Step 8: Rename branch.
+git branch -M main
+Meaning: Current branch name ni main ga change chesthundi.
+Step 9: Connect GitHub repository.
+git remote add origin https://github.com/YOUR_USERNAME/DevOpsLab.git
+Meaning:
+remote add: Remote repository connect chesthundi.
+origin: Remote repository ki ichina name.
+YOUR_USERNAME: Nee GitHub username tho replace cheyyali.
+Step 10: Push files to GitHub.
+git push -u origin main
+Meaning: Local repository lo unna commits ni GitHub ki upload chesthundi.
+Step 11: Modify and push updated file.
+echo "<html><body><h1>Updated DevOps Laboratory</h1></body></html>" > Index.html
+
+git add Index.html
+git commit -m "Updated Index.html"
+git push origin main
+Meaning: Index.html update chesi, stage chesi, commit chesi GitHub ki push chesthunnam.
+Step 12: Check repository status and history.
+git status
+git log --oneline
+git status: Files status chupisthundi.
+git log --oneline: Commit history short format lo chupisthundi.
+Expected Output
+Index.html and About.html GitHub lo kanipisthayi.
+Updated file GitHub lo reflect avuthundi.
+git status working tree status chupisthundi.
+Result
+Thus, a Git repository was created, HTML files were added and committed, and changes were pushed successfully to GitHub.
+Experiment 2: Clone a GitHub Repository
+Aim
+To clone an existing GitHub repository into the local system and push a new file.
+Requirements
+Git
+GitHub account
+Terminal
+GitHub repository named GitCloneDemo
+Procedure
+Step 1: Create an empty repository in GitHub.
+Repository name: GitCloneDemo
+Step 2: Clone the repository.
+git clone https://github.com/YOUR_USERNAME/GitCloneDemo.git
+Meaning: GitHub lo unna repository ni local computer ki copy chesthundi.
+Step 3: Enter the cloned folder.
+cd GitCloneDemo
+Meaning: Cloned repository folder loki enter avuthundi.
+Step 4: Create a new file.
+echo "Welcome to GitHub and DevOps" > Sample.txt
+Meaning: Sample.txt ane file create chesi message write chesthundi.
+Step 5: Add the file.
+git add Sample.txt
+Meaning: File ni staging area ki add chesthundi.
+Step 6: Commit the file.
+git commit -m "Added Sample.txt"
+Meaning: File changes ni Git history lo save chesthundi.
+Step 7: Push to GitHub.
+git push origin main
+Meaning: Local main branch changes ni GitHub main branch ki upload chesthundi.
+Step 8: Verify the changes.
+git status
+git log --oneline
+Expected Output
+Sample.txt GitHub repository lo kanipisthundi. Commit history lo new commit display avuthundi.
+Result
+Thus, a GitHub repository was cloned, modified, committed and pushed successfully.
+Experiment 3: Git Branching and Merging
+Aim
+To create a development branch, add student details and merge the development branch into the main branch.
+Requirements
+Git
+GitHub account
+Terminal
+Repository named DevOps_Branching
+Procedure
+Step 1: Clone the repository.
+git clone https://github.com/YOUR_USERNAME/DevOps_Branching.git
+cd DevOps_Branching
+Step 2: Create a development branch.
+git checkout -b development
+Meaning:
+checkout: Branch switch cheyadaniki.
+-b: New branch create chesthundi.
+development: New branch name.
+Step 3: Create StudentDetails.txt.
+echo "Student Name: Your Name" > StudentDetails.txt
+echo "Course: DevOps" >> StudentDetails.txt
+echo "College: Your College" >> StudentDetails.txt
+Meaning:
+>: File create chesi content write chesthundi.
+>>: Already unna file ki additional content add chesthundi.
+Step 4: Add and commit the file.
+git add StudentDetails.txt
+git commit -m "Added student details"
+Step 5: Push development branch.
+git push -u origin development
+Meaning: Development branch ni GitHub ki upload chesthundi.
+Step 6: Switch to main branch.
+git checkout main
+Meaning: Development branch nunchi main branch ki switch avuthundi.
+Step 7: Merge development into main.
+git merge development
+Meaning: Development branch lo unna changes main branch loki merge avuthayi.
+Step 8: Push main branch.
+git push origin main
+Step 9: Display branches and history.
+git branch -a
+git log --oneline --graph --all
+git branch -a: Local and remote branches list chesthundi.
+--graph: Commit history ni graph format lo chupisthundi.
+--all: All branches history chupisthundi.
+Expected Output
+Development branch create avuthundi.
+StudentDetails.txt development branch lo add avuthundi.
+Merge taruvatha main branch lo kuda file kanipisthundi.
+Result
+Thus, Git branching and merging operations were performed successfully.
+Experiment 4: Install and Configure Jenkins
+Aim
+To install Jenkins on Linux, start the Jenkins service and create a Freestyle project.
+Requirements
+Linux / Kali Linux
+Internet connection
+Java JDK
+Jenkins
+Procedure
+Step 1: Update package information.
+sudo apt update
+Meaning: Linux repositories nunchi latest package information download chesthundi.
+Step 2: Upgrade packages.
+sudo apt upgrade -y
+Meaning: Available packages ni latest versions ki upgrade chesthundi.
+Step 3: Install Java and fontconfig.
+sudo apt install fontconfig openjdk-17-jdk -y
+Meaning:
+fontconfig: Font configuration package.
+openjdk-17-jdk: Java 17 Development Kit install chesthundi.
+-y: Installation confirmation automatic ga accept chesthundi.
+Step 4: Check Java installation.
+java -version
+Meaning: Installed Java version display chesthundi.
+Step 5: Add Jenkins repository.
+Jenkins installation ki official Jenkins repository and signing key add cheyyali. Signing-key URL and repository command version batti change avvachu, kabatti nee lab manual lo ichina exact repository commands follow avvali.
+Step 6: Install Jenkins.
+Repository add chesina tarvatha:
+sudo apt update
+sudo apt install jenkins -y
+Meaning:
+apt update: Jenkins package information refresh chesthundi.
+apt install jenkins: Jenkins install chesthundi.
+Step 7: Start Jenkins service.
+sudo systemctl start jenkins
+Meaning: Jenkins service start chesthundi.
+Step 8: Enable Jenkins.
+sudo systemctl enable jenkins
+Meaning: System restart ayina Jenkins automatic ga start avuthundi.
+Step 9: Check Jenkins status.
+sudo systemctl status jenkins
+Meaning: Jenkins active ga undho ledho check chesthundi.
+Step 10: Get initial administrator password.
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+Meaning: Jenkins first-time login password display chesthundi.
+Jenkins Freestyle Project
+Browser open cheyyali.
+http://localhost:8080 enter cheyyali.
+Initial administrator password enter cheyyali.
+Suggested plugins install cheyyali.
+New Item click cheyyali.
+Project name JavaProject enter cheyyali.
+Freestyle project select cheyyali.
+Build Steps lo Execute shell select cheyyali.
+Commands:
+echo "Welcome to Jenkins"
+java -version
+echo: Welcome message print chesthundi.
+java -version: Java version display chesthundi.
+Save → Build Now → Console Output.
+Expected Output
+Console Output lo:
+Welcome to Jenkins
+Java version information
+Finished: SUCCESS
+Result
+Thus, Jenkins was installed and configured, and a Freestyle project was executed successfully.
+Experiment 5: Continuous Integration Pipeline Using Jenkins
+Aim
+To automate cloning, compiling and executing a Java application using Jenkins Pipeline.
+Requirements
+Java JDK
+Git
+GitHub account
+Jenkins
+GitHub repository named JavaCI
+Procedure
+Step 1: Create project folder.
+mkdir JavaCI
+cd JavaCI
+Step 2: Create Hello.java.
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Welcome to DevOps CI Pipeline");
+    }
+}
+Program Explanation:
+public class Hello: Hello ane Java class create chesthundi.
+main(): Java program execution ikkadi nunchi start avuthundi.
+System.out.println(): Message print chesthundi.
+Step 3: Initialize Git.
+git init
+Step 4: Add Java file.
+git add Hello.java
+Step 5: Commit Java file.
+git commit -m "Initial Java application"
+Step 6: Rename branch.
+git branch -M main
+Step 7: Connect GitHub repository.
+git remote add origin https://github.com/YOUR_USERNAME/JavaCI.git
+Step 8: Push source code.
+git push -u origin main
+Jenkins Pipeline Configuration
+Jenkins open cheyyali.
+New Item select cheyyali.
+Name JavaCIPipeline enter cheyyali.
+Pipeline select cheyyali.
+Pipeline Script section lo below code paste cheyyali.
+Jenkins Pipeline Script:
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/YOUR_USERNAME/JavaCI.git'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                sh 'javac Hello.java'
+            }
+        }
+
+        stage('Execute') {
+            steps {
+                sh 'java Hello'
+            }
+        }
+    }
+}
+Script Explanation:
+pipeline: Complete pipeline define chesthundi.
+agent any: Available Jenkins agent lo execute chesthundi.
+stages: Different stages ni contain chesthundi.
+stage('Clone'): GitHub repository clone chesthundi.
+stage('Compile'): Java program compile chesthundi.
+javac: Java compiler.
+stage('Execute'): Java program execute chesthundi.
+java Hello: Hello class run chesthundi.
+sh: Linux shell command execute chesthundi.
+Expected Output
+Welcome to DevOps CI Pipeline
+Finished: SUCCESS
+Result
+Thus, a Java application was cloned, compiled and executed successfully using Jenkins CI Pipeline.
+Experiment 6: Jenkins Poll SCM
+Aim
+To configure Jenkins Poll SCM to periodically check a GitHub repository and automatically trigger a build when changes are detected.
+Requirements
+Java JDK
+Git
+GitHub account
+Jenkins
+Repository named PollSCM
+Procedure
+Step 1: Create Java program.
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("First Build");
+    }
+}
+Step 2: Push source code to GitHub.
+git init
+git add Hello.java
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/PollSCM.git
+git push -u origin main
+Step 3: Create Jenkins project.
+Open Jenkins.
+New Item click cheyyali.
+Project name PollSCMProject enter cheyyali.
+Freestyle project select cheyyali.
+Configure click cheyyali.
+Step 4: Configure Git.
+Source Code Management lo Git select chesi repository URL enter cheyyali.
+Branch:
+*/main
+Step 5: Configure Poll SCM.
+Build Triggers lo Poll SCM select cheyyali.
+Schedule:
+H/2 * * * *
+Meaning: Jenkins approximately every two minutes ki repository changes check chesthundi. H means Jenkins chooses a distributed minute value instead of all jobs checking at the exact same minute.
+Step 6: Add build commands.
+Build Steps → Execute shell:
+javac Hello.java
+java Hello
+Meaning:
+javac Hello.java: Java source file compile chesthundi.
+java Hello: Compiled Java program execute chesthundi.
+Step 7: Modify the Java program.
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Updated Build through Poll SCM");
+    }
+}
+Step 8: Push updated code.
+git add Hello.java
+git commit -m "Updated Java application"
+git push origin main
+Expected Output
+Initial build:
+First Build
+Updated build:
+Updated Build through Poll SCM
+Jenkins detects the repository changes and triggers a new build according to its polling schedule.
+Result
+Thus, Poll SCM was configured successfully, and Jenkins detected source-code changes and triggered a build.
+Experiment 7: Declarative Pipeline in Jenkins
+Aim
+To create a Declarative Pipeline with Build, Test and Deploy stages.
+Requirements
+Java JDK
+Git
+GitHub
+Jenkins
+Repository named DeclarativeDemo
+Procedure
+Step 1: Create Java program.
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Declarative Pipeline");
+    }
+}
+Step 2: Push the Java file to GitHub.
+git init
+git add Hello.java
+git commit -m "Initial Java application"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/DeclarativeDemo.git
+git push -u origin main
+Step 3: Create Jenkins Pipeline.
+Open Jenkins.
+Click New Item.
+Enter DeclarativePipeline.
+Select Pipeline.
+Paste the below script.
+Declarative Pipeline Script
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/YOUR_USERNAME/DeclarativeDemo.git'
+
+                sh 'javac Hello.java'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'java Hello'
+                echo 'Testing completed'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Application deployed successfully'
+            }
+        }
+    }
+}
+Script Explanation
+pipeline: Main pipeline block.
+agent any: Any available agent lo run avuthundi.
+stages: All stages ni group chesthundi.
+stage('Build'): Source code clone chesi compile chesthundi.
+stage('Test'): Java program execute chesthundi.
+stage('Deploy'): Deployment confirmation message print chesthundi.
+echo: Message print chesthundi.
+sh: Shell command execute chesthundi.
+Important: Ee lab script lo Deploy stage message matrame print chesthundi. Real server ki application deploy cheyyadu.
+Expected Output
+Welcome to Declarative Pipeline
+Testing completed
+Application deployed successfully
+Finished: SUCCESS
+Result
+Thus, a Declarative Pipeline was created with Build, Test and Deploy stages successfully.
+Experiment 8: Scripted Pipeline in Jenkins
+Aim
+To create a Scripted Pipeline with Build, Test and Deploy stages.
+Requirements
+Java JDK
+Git
+GitHub
+Jenkins
+Repository named ScriptedDemo
+Procedure
+Step 1: Create Java program.
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Scripted Pipeline");
+    }
+}
+Step 2: Push source code to GitHub.
+git init
+git add Hello.java
+git commit -m "Initial Java application"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/ScriptedDemo.git
+git push -u origin main
+Step 3: Create Jenkins Pipeline.
+Open Jenkins.
+Click New Item.
+Enter ScriptedPipeline.
+Select Pipeline.
+Paste the following script.
+Scripted Pipeline Script
+node {
+
+    stage('Build') {
+        git branch: 'main',
+            url: 'https://github.com/YOUR_USERNAME/ScriptedDemo.git'
+
+        sh 'javac Hello.java'
+    }
+
+    stage('Test') {
+        sh 'java Hello'
+
+        echo 'Testing completed successfully'
+    }
+
+    stage('Deploy') {
+        echo 'Application deployed successfully'
+    }
+}
+Script Explanation
+node: Jenkins agent and workspace allocate chesthundi.
+stage: Pipeline lo separate stages create chesthundi.
+Build: Source code clone chesi compile chesthundi.
+Test: Java program execute chesthundi.
+Deploy: Deployment message display chesthundi.
+git: GitHub repository nunchi code checkout chesthundi.
+sh: Shell command execute chesthundi.
+echo: Message print chesthundi.
+Important: Ee experiment lo Deploy stage message matrame print chesthundi; actual deployment perform cheyyadu.
+Expected Output
+Welcome to Scripted Pipeline
+Testing completed successfully
+Application deployed successfully
+Finished: SUCCESS
+Result
+Thus, a Scripted Pipeline was created and Build, Test and Deploy stages were executed successfully.
+Experiment 9: Install Docker and Run Hello World Container
+Aim
+To install Docker, download the Hello World image and execute a container.
+Requirements
+Linux system
+Internet connection
+Docker
+Procedure
+Step 1: Update packages.
+sudo apt update
+Meaning: Available package information update chesthundi.
+Step 2: Install Docker.
+sudo apt install docker.io -y
+Meaning: Docker package install chesthundi.
+Step 3: Start Docker service.
+sudo systemctl start docker
+Meaning: Docker service start chesthundi.
+Step 4: Enable Docker service.
+sudo systemctl enable docker
+Meaning: System boot ayinappudu Docker automatic ga start avuthundi.
+Step 5: Check Docker status.
+sudo systemctl status docker
+Meaning: Docker service running lo undho ledho check chesthundi.
+Step 6: Check Docker version.
+sudo docker --version
+Meaning: Installed Docker version display chesthundi.
+Step 7: Download Hello World image.
+sudo docker pull hello-world
+Meaning: Docker registry nunchi hello-world image download chesthundi.
+Step 8: Run the container.
+sudo docker run hello-world
+Meaning: Hello World image nunchi container create chesi execute chesthundi.
+Step 9: Display images.
+sudo docker images
+Meaning: Local system lo available Docker images list chesthundi.
+Step 10: Display running containers.
+sudo docker ps
+Meaning: Currently running containers chupisthundi.
+Step 11: Display all containers.
+sudo docker ps -a
+Meaning: Running and stopped containers anni display chesthundi.
+Expected Output
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+Result
+Thus, Docker was installed and the Hello World container was executed successfully.
+Experiment 10: Containerize a Java Application Using Docker
+Aim
+To create a Docker image for a Java application and execute it inside a Docker container.
+Requirements
+Docker
+Java application
+Linux terminal
+Internet connection
+Procedure
+Step 1: Create project folder.
+mkdir JavaDocker
+cd JavaDocker
+Step 2: Create Hello.java.
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Java - Welcome to DevOps Laboratory");
+    }
+}
+Program Explanation
+class Hello: Java class create chesthundi.
+main(): Program execution start point.
+println(): Output print chesthundi.
+Step 3: Create Dockerfile.
+File name exactly Dockerfile undali. .txt extension undakudadhu.
+FROM eclipse-temurin:17-jdk
+
+WORKDIR /app
+
+COPY Hello.java .
+
+RUN javac Hello.java
+
+CMD ["java", "Hello"]
+Dockerfile Explanation
+Command
+Meaning
+FROM
+Base Docker image select chesthundi.
+WORKDIR
+Container lo working directory set chesthundi.
+COPY
+Local file ni image loki copy chesthundi.
+RUN
+Image build time lo command execute chesthundi.
+CMD
+Container start ayinappudu run avvalsina command specify chesthundi.
+
+Step 4: Build Docker image.
+sudo docker build -t java-devops .
+Meaning:
+docker build: Docker image create chesthundi.
+-t: Image ki name/tag assign chesthundi.
+java-devops: Image name.
+.: Current directory ni build context ga use chesthundi.
+Step 5: Display Docker images.
+sudo docker images
+Meaning: Created Docker image list lo kanipisthundi.
+Step 6: Run the container.
+sudo docker run --name java-container java-devops
+Meaning: java-devops image use chesi java-container ane container create chesi run chesthundi.
+Step 7: Check containers.
+sudo docker ps -a
+Meaning: Created containers list chupisthundi.
+Expected Output
+Java - Welcome to DevOps Laboratory
+Result
+Thus, the Java application was containerized using Docker and executed successfully.
+Experiment 11: Containerize a Python Applic
